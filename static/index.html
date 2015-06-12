@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kynarilaarnio overlay</title>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+<style>
+body, html, #overlay {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	width: 1280px;
+	height: 720px;
+	box-sizing: border-box;
+	position: absolute;
+	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	opacity: 1;
+	transition: all 1s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+}
+.box {
+
+	transition: all 0.5s;
+	position: absolute;
+	margin: 60px;
+	opacity: 1;
+	background: rgba(255,255,255,0.8);
+	background: linear-gradient(to bottom, rgba(220,220,220,0.9) 0%,rgba(255,255,255,1) 20%, rgba(255,255,255,0.90) 60%, rgba(230,230,230,0.9) 100%);
+	padding: 20px;
+	box-sizing: border-box;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border: 3px solid #333;
+}
+#top {
+	width: 1160px;
+	top: 0;
+	left: 0;
+	-webkit-transform: skewX(-7deg);
+}
+#bottom {
+	width: 1160px;
+	bottom: 0;
+	left: 0;
+	-webkit-transform: skewX(-7deg);
+}
+#left {
+	left: 0;
+	top: 0;
+	min-width: 300px;
+	min-height: 100px;
+	-webkit-transform: skewX(-2deg);
+}
+#right {
+	right: 0;
+	top: 0;
+	text-align: right;
+	min-width: 300px;
+	min-height: 100px;
+	-webkit-transform: skewX(2deg);
+	border-top-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+#middle {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 40px;
+	margin: 180px 60px 180px 60px;
+}
+#bottom.hide, #top.hide, #left.hide, #right.hide, #middle.hide, #logo.hide {
+	opacity: 0;
+}
+#bottom.hide .title, #top.hide .title {
+	left: -200px;
+	opacity: 0;
+}
+#bottom.hide .text, #top.hide .text {
+	left: 200px;
+	opacity: 0;
+}
+#bottom.hide, #top.hide {
+	left: -100px;
+	width: 1400px;
+}
+#left.hide {
+	left: -200px;
+}
+#right.hide {
+	right: -200px;
+}
+#middle.hide {
+	-webkit-transform: scale(2);
+	-webkit-transform-origin: 50% 50%;
+}
+#left.hide .title, #left.hide .text {
+	left: -200px;
+	opacity: 0;
+}
+#right.hide .title, #right.hide .text {
+	left: 200px;
+	opacity: 0;
+}
+#top, #bottom {
+	padding: 10px 40px 10px 40px;
+}
+.title {
+	transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	font-size: 2em;
+	letter-spacing: -.08rem;
+	font-weight: 300;
+	margin-bottom: 10px;
+	position: relative;
+	left: 0;
+	opacity: 1;
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+.text {
+	transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	width: 100%;
+	position: relative;
+	left: 0;
+	opacity: 1;
+	font-weight: bold;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+	font-size: 1.2em;
+	white-space: pre-wrap;
+}
+@-webkit-keyframes spin {
+    from {-webkit-transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);}
+}
+#logo {
+	box-sizing: border-box;
+	transition: all 1s;
+	padding: 50px;
+	-webkit-transform: scale(1) rotate(0deg);
+	-webkit-transform-origin: 50% 50%;
+	opacity: 1;
+	height: 720px;
+	width: 1280px;
+}
+#logo .title {
+	border: 3px solid #333;
+	font-size: 2em;
+	letter-spacing: 50px;
+	background: white;
+	margin: 0 auto;
+	-webkit-animation: spin 20s infinite linear;
+	padding: 15px;
+	transition: all 1s;
+	border-radius: 1000px;
+}
+#logo .akl {
+	position: relative;
+	top: -390px;
+	font-size: 12em;
+	font-weight: 400;
+	text-align: center;
+	line-height: 110px;
+	background: url(logo.jpg);
+	background-position: center 40%;
+	background-size: 400px;
+	background-repeat: no-repeat;
+	height: 300px;
+}
+#logo.hide {
+	-webkit-transform: scale(3) rotate(720deg);
+	opacity: 0;
+}
+#sponsors {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+#sponsors img {
+	height: 50px;
+}
+</style>
+</head>
+<body>
+<div id='overlay'>
+	<div id='logo' class=''><div class='title'>Akateeminen kynäriliiga&nbsp;</div><div class='akl'>AKL</div></div>
+	<div id='top' class='box hide'><div class='title'></div><div class='text'></div></div>
+	<div id='bottom' class='box hide'><div class='title'></div><div class='text'></div></div>
+	<div id='left' class='box hide'><div class='title'></div><div class='text'></div></div>
+	<div id='right' class='box hide'><div class='title'></div><div class='text'></div></div>
+	<div id='middle' class='box hide'><div class='title'></div><div class='text'></div></div>
+	<div id='sponsors'><img src='tite.png'></div>
+</div>
+<script src='http://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script src='jquery.lettering.js'></script>
+<script src='circletype.min.js'></script>
+<script src='reconnecting-websocket.min.js'></script>
+<script>
+var show = function(id, title, text, delay) {
+	if(id != null) {
+		$('#'+id).removeClass('hide');
+	}
+	if(title != null) {
+		$('#'+id+' .title').html(title);
+	}
+	if(text != null) {
+		$('#'+id+' .text').html(text);
+	}
+	if(delay != null) {
+		setTimeout(function() {
+			hide(id);
+		}, delay)
+	}
+}
+var hide = function(id) {
+	if(id == null) {
+		$('#overlay > div').addClass('hide');
+	} else {
+		$('#'+id).addClass('hide');
+	}
+}
+$(function() {
+	$('#logo .title').circleType({callback: function() {
+		$('#logo .title').width($('#logo .title').height()+'px');
+		$('#logo .title').css('border-radius', $('#logo .title').height()+'px');
+	}});
+	var ws = new ReconnectingWebSocket('ws://'+location.hostname+':3000/');
+	ws.onopen = function() {
+		show('bottom', 'Connected', '', 1000);
+	}
+	ws.onmessage = function(e) {
+		var data = JSON.parse(e.data);
+		console.log(data);
+		if(data.command == 'show') {
+			show(data.control, data.title, data.text, data.delay);
+		} else if(data.command == 'hide') {
+			hide(data.control);
+		}
+	}
+	ws.onclose = function(e) {
+		hide();
+	}
+	hide();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+input, textarea {
+	display: block;
+	width: 100%;
+}
+.control, .row {
+	text-align: center;
+}
+#left textarea, #middle textarea, #right textarea {
+	height: 200px;
+}
