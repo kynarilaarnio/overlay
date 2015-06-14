@@ -71,6 +71,6 @@ $(function () {
 		hide('logo');
 	});
 	$('#showlogo').click(function (e) {
-		show('logo');
+		show('logo', null, null, null);
 	});
 });
