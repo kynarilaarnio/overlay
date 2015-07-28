@@ -1,5 +1,10 @@
 {
-	"name": "kynarioverlay",
-	"version": "0.0.1",
-	"main": "index.html"
+  "name": "kynarioverlay",
+  "version": "0.0.1",
+  "main": "index.html",
+  "dependencies": {
+    "connect": "~3.4.0",
+    "serve-static": "~1.10.0",
+    "websocket.io": "~0.2.1"
+  }
 }
