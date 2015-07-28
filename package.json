@@ -5,6 +5,10 @@
   "dependencies": {
     "connect": "~3.4.0",
     "serve-static": "~1.10.0",
-    "websocket.io": "~0.2.1"
+    "websocket.io": "~0.2.1",
+    "nw": "~0.12.2"
+  },
+  "scripts": {
+  	"start": "./node_modules/nw/bin/nw ."
   }
 }
