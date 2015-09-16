@@ -1,7 +1,12 @@
 {
   "name": "kynarioverlay",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.html",
+  "window": {
+  	"width": 1000,
+  	"height": 730,
+  	"toolbar": false
+  },
   "dependencies": {
     "connect": "~3.4.0",
     "serve-static": "~1.10.0",
