@@ -335,7 +335,10 @@
 		});
 		var ws = new ReconnectingWebSocket('ws://' + location.hostname + ':3000/');
 		ws.onopen = function() {
-			show('logo', '', '', 5000);
+			show('bottom', 'Connected', '', 1000);
+			setTimeout(function() {
+				show('logo', undefined, undefined, 5000);
+			}, 1000);
 		};
 		ws.onmessage = function(e) {
 			var data = JSON.parse(e.data);
